@@ -1,3 +1,4 @@
+
 // Conversion into number
 let score = "12"
 
@@ -35,6 +36,35 @@ let someNum = 33
 let stringNum = String(someNum)
 console.log(typeof someNum);
 
+
+
+// ************************OPERATIONS********************************
+
+let value = 3
+let negValue = -value
+//console.log(negValue);
+
+console.log(2**4);  // 2 raise to power 4
+
+let str1 = "Rahul"
+let str2 = "Belwal"
+console.log(str1 + str2 );
+
+
+// ...............................................................mdn
+let x = 3;
+const y = x++;
+
+console.log(`x:${x}, y:${y}`);
+// Expected output: "x:4, y:3"
+
+let a = 3;
+const b = ++a;
+
+console.log(`a:${a}, b:${b}`);
+// Expected output: "a:4, b:4"
+
+//.................................................................
 
 
 
