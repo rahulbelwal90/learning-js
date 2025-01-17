@@ -57,3 +57,26 @@ console.log(typeof bigNum);                // bigint
 console.log(typeof myObj);                 // object
 console.log(typeof heroes);                // object
 console.log(typeof myFunction);            // function
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// STACK and HEAP
+//Primitive datatype => Call by value => stack memory
+//NonPrimitive Datatype => Call by reference => heap memory
+// JS is a dynamically typed language, means you dont need to specify the datatype of variable when you declare it.
+
+let youTubeChannel = "HiteshSir"
+let anotherName = youTubeChannel
+anotherName = "ChaiOrCode"
+console.log(youTubeChannel);
+console.log(anotherName);                // stack memory eg.
+
+
+let userOne = {
+    email: "abc@gmail.com",
+    upi: "abc@sbi"
+}
+let userTwo = userOne
+userTwo.email = "Rahul@gmail.com"
+console.log(userOne);
+console.log(userTwo);                   // heap memory eg.
