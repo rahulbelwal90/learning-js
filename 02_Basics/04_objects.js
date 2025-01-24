@@ -59,3 +59,27 @@ console.log(Object.values(tinderUser));     //[ 'abc123', 'Sammy', false ]
 console.log(Object.entries(tinderUser));    //[ [ 'id', 'abc123' ], [ 'name', 'Sammy' ], [ 'isLoggedIn', false ] ]
 
 console.log(tinderUser.hasOwnProperty('isLoggedIn'))   //true       
+
+
+//+++++++++++++++++++++++++++++ DESTRUCTURING OBJECT +++++++++++++++++++++++++++++++++++++++++
+
+const course = {
+    courseName: "JS in hindi",
+    price: "999",
+    courseInstructor: "Hitesh"
+}
+
+// course.courseInstructor
+
+// const {courseInstructor} = course;            // destructuring object
+const {courseInstructor:instructor} = course;    // using other name of key 
+// console.log(courseInstructor);
+console.log(instructor);                         // calling
+
+
+//json file : In json file "key" and "value" both are treated as string.
+//    {
+//     "coursename":"js",
+//     "instructor": "hitesh",
+//     "price": "999"
+//    }
