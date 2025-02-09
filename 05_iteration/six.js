@@ -1,6 +1,6 @@
-const coding = ["js","ruby","python","java","cpp"]
-
 //Filter method _________________________________________________________________________________________
+
+
 const myNums = [1,2,3,4,5,6,7,8,9,10]
 
 //const newNums = myNums.filter( (num)=> (num>4) )  //does not need the return statement , because we are defining condition under parenthesis
