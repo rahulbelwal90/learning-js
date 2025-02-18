@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai or code</title>
+</head>
+<body style="background-color:#212121; color:bisque">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+
+//******************************************************************************************
+
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li');
+        li.innerHTML=`${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+
+    addLanguage("python")
+    addLanguage("typescript")
+
+
+    //using another method in optimize approach
+
+    function addOptiLanguage(langName){
+        const li = document.createElement('li');   //creating a 'li' element and storing in a variable
+        li.appendChild(document.createTextNode(langName))  // creating a textNode for element
+        document.querySelector('.language').appendChild(li) // attaching the element with document
+    }
+    addOptiLanguage('goLang')
+
+
+    //EDIT: editing the element value-------------------------------------------------------
+
+    const secondLang = document.querySelector("li:nth-child(2)")  //selecting second element 'python'
+    console.log(secondLang.innerHTML);
+    
+    // secondLang.innerHTML = "Mojo"
+     const newLi = document.createElement('li')   //creating new element
+     newLi.textContent="Mojo";            //new textContent
+     secondLang.replaceWith(newLi);        //replacing python with Mojo
+
+
+    // EDIT: editing the element value------------------------------------------------------
+    
+    const firstLang = document.querySelector("li:first-child");
+    firstLang.outerHTML='<li>TypeScript</li>'
+
+
+    //remove:-------------------------------------------------------------------------------
+
+    const lastLang = document.querySelector('li:last-child');
+    lastLang.remove();
+</script>
+
+//******************************************************************************************
+
+</html>
