@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur Code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+
+    setTimeout(function(){
+        console.log("hello Coder...")
+    }, 2000);
+
+    const greet = function(){
+        console.log("Hello Coder...2")
+    }
+
+    setTimeout(greet, 3000);     //only give the refrence of function , do not execute the function.
+
+    // document.querySelector('h1').innerHTML= 'Chai aur JavaScript';
+    
+    const changeText = function(){
+        document.querySelector('h1').innerHTML= 'Chai aur JavaScript'; 
+    }
+
+    const changeMe = setTimeout(changeText, 4000);        //declaring setTimeout in a const variable
+
+
+    //clearTimeout  concept...
+
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearTimeout(changeMe);
+        console.log("STOPPED...");
+    })
+</script>
+</html>
