@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            /* Centers horizontally */
+            align-items: center;
+            /* Centers vertically */
+            height: 100vh;
+            /* Full viewport height */
+            margin: 0;
+            /* Remove default margin */
+            background-color: #2f2f2f;
+            /* Optional background */
+        }
+
+        .card {
+            width: 400px;
+            height: 500px;
+            box-shadow: 0 4px 8px 0 rgb(229, 222, 86);
+            transition: 0.3s;
+        }
+
+        .container {
+            padding: 2px 12px;
+            color: antiquewhite
+        }
+
+        h1 {
+            color: aliceblue;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>GitHub Profile Info. using API</h1>
+        <div class="card">
+            <img src="img_avtar.png" alt="avtar" style="width: 100%;">
+            <div class="container">
+                <h3>GitHub User</h3>
+                <p>BCA Student</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    const requestUrl = "https://api.github.com/users/rahulbelwal90";
+
+    const xhr = new XMLHttpRequest;
+    xhr.open('GET', requestUrl);
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText);
+            // console.log(data);
+
+            document.querySelector('.card img').setAttribute("src", `${data.avatar_url}`);
+            document.querySelector('h3').innerHTML = `User: ${data.name}, Follower: ${data.followers} `;
+            document.querySelector('h3').style.fontWeight = 'bold';
+            document.querySelector('p').innerHTML = `Bio: ${data.bio}, Blog: ${data.blog} `;
+        }
+    }
+    xhr.send();
+</script>
+
+</html>
